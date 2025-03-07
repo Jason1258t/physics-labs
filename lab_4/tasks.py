@@ -8,8 +8,9 @@ import math
 m = 0.1122
 l = 0.33
 a = 15.0
-a_list = [(3.0, 11.5), (3.5, 11.75), (3.25, 11.75), (2.75, 12.0), (3.25, 11.75), (3.15, 11.75)]
-dt = float()
+a_list = [(3.0, 11.5), (3.5, 11.75), (3.25, 11.75), (2.75, 12.0), (3.25, 11.75)]
+dt = [110, 108, 103, 117, 99]
+dt_aver = sum(dt)/len(dt)
 g = 9.8
 
 def U(a):
@@ -30,7 +31,7 @@ def Ke(u1, u2, v1):
 
 a1_aver, a2_aver = 0, 0
 def task1(out=True):
-    global m, l, a, a_list, dt, g, a1_aver, a2_aver
+    global m, l, a, a_list, dt, g, a1_aver, a2_aver, dt
     v1 = V(a)
     a1_aver = sum([i[0] for i in a_list])/len(a_list)
     a2_aver = sum([i[1] for i in a_list])/len(a_list)
@@ -38,7 +39,7 @@ def task1(out=True):
     kv = Kv(u1, u2, v1)
     ke = Ke(u1, u2, v1)
     if out:
-        print(f'v1 : {v1}\nu1 : {u1}\nu2 : {u2}\nKv : {kv}\nKe : {ke}')
+        print(f'a1 aver: {a1_aver}\na2 aver : {a2_aver}\ndt aver : {dt_aver}\nv1 : {v1}\nu1 : {u1}\nu2 : {u2}\nKv : {kv}\nKe : {ke}')
 
 def Wod(m, u1, u2, v1):
     wod = ((m * v1**2)/2 - (m * u1**2)/2 - (m * u2**2)/2) / 2
@@ -54,5 +55,5 @@ def task2():
 def task3():
     pass
 
-task1(0)
+task1()
 task2()
