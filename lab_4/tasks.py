@@ -1,10 +1,15 @@
 import math
 
-m = float(input('Введите массы m1, m2 : ').split())
-l = float(input('Введите длину подвеса шаров l : '))
-a = float(input('Введите угол a : '))
-a_list = [(tuple(input('Введите a1, a2 через пробел : ').split())) for i in range(5)]
-dt = float(input('Введите dt : '))
+# m = float(input('Введите массы m1, m2 : ').split())
+# l = float(input('Введите длину подвеса шаров l : '))
+# a = float(input('Введите угол a : '))
+# a_list = [(tuple(input('Введите a1, a2 через пробел : ').split())) for i in range(5)]
+# dt = float(input('Введите dt : '))
+m = float()
+l = float()
+a = float()
+a_list = [(), (), (), (), ()]
+dt = float()
 g = 9.8
 
 def U(a):
@@ -61,4 +66,4 @@ def task2():
     print(*[f'Wod : {i['wod']}' for i in res], sep='\n')
 
 def task3():
-    
+    pass
